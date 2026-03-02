@@ -42,7 +42,6 @@
 </script>
 
 <div class="dashboard-page">
-	<!-- Bus & Ticket on the same row, both above Status. Location on the right spanning both rows. -->
 	<section class="stats-grid" aria-label="Dashboard stats">
 		<div class="stats-cell stats-cell--bus">
 			<KPICard label="Bus Count" value="50" />
@@ -75,10 +74,6 @@
 		min-height: 0;
 		gap: 0;
 	}
-
-	/* 3-column, 2-row grid:
-	   Row 1: [Bus] [Ticket] [Location (top)]
-	   Row 2: [Status (spans 2 cols)] [Location (bottom)] */
 	.stats-grid {
 		display: grid;
 		grid-template-columns: 1fr 1fr 2fr;
@@ -90,49 +85,15 @@
 		flex-shrink: 0;
 		margin-bottom: 1.5rem;
 	}
-
-	.stats-cell {
-		min-width: 0;
-	}
-
-	.stats-cell--bus {
-		grid-area: bus;
-	}
-
-	.stats-cell--ticket {
-		grid-area: ticket;
-	}
-
-	.stats-cell--status {
-		grid-area: status;
-		display: flex;
-		flex-direction: column;
-		min-height: 300px;
-	}
-
-	.stats-cell--location {
-		grid-area: location;
-		display: flex;
-		flex-direction: column;
-		min-height: 300px;
-	}
-
+	.stats-cell { min-width: 0; }
+	.stats-cell--bus { grid-area: bus; }
+	.stats-cell--ticket { grid-area: ticket; }
+	.stats-cell--status { grid-area: status; display: flex; flex-direction: column; min-height: 300px; }
+	.stats-cell--location { grid-area: location; display: flex; flex-direction: column; min-height: 300px; }
 	.stats-cell--status :global(.chart-card),
 	.stats-cell--location :global(.chart-card) {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		min-height: 300px;
+		flex: 1; display: flex; flex-direction: column; min-height: 300px;
 	}
-
-	.filters-section {
-		flex-shrink: 0;
-		margin-bottom: 1rem;
-	}
-
-	.table-section {
-		flex: 1;
-		min-height: 0;
-		overflow: auto;
-	}
+	.filters-section { flex-shrink: 0; margin-bottom: 1rem; }
+	.table-section { flex: 1; min-height: 0; overflow: auto; }
 </style>

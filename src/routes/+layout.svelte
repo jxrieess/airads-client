@@ -1,8 +1,10 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import favicon from '$lib/assets/favicon.svg';
 	import { ClientHeader, ClientTabs } from '$lib/components/client';
 
 	let { children } = $props();
+	const isAdmin = $derived($page.url.pathname.startsWith('/admin'));
 </script>
 
 <svelte:head>
@@ -36,10 +38,14 @@
 	}
 </style>
 
-<div class="wrapper">
-	<ClientHeader />
-	<ClientTabs />
-	<main>
-		{@render children()}
-	</main>
-</div>
+{#if isAdmin}
+	{@render children()}
+{:else}
+	<div class="wrapper">
+		<ClientHeader />
+		<ClientTabs />
+		<main>
+			{@render children()}
+		</main>
+	</div>
+{/if}

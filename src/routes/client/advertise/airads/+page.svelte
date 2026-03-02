@@ -175,7 +175,7 @@
 
 <div class="advertise1-page">
 	<div class="page-header">
-		<a href="/advertise" class="back-link">&lt;</a>
+		<a href="/client/advertise" class="back-link">&lt;</a>
 		<span class="crumb">Client - Advertise1</span>
 	</div>
 
@@ -205,7 +205,11 @@
 				<h3 class="section-title">Select Media</h3>
 				<div class="media-row">
 					<div class="media-card media-card--brand">
-						<span class="media-logo-text">Julie's Bakeshop™</span>
+						{#if imagePreviewUrl}
+							<img src={imagePreviewUrl} alt="Uploaded media" class="media-uploaded-img" />
+						{:else}
+							<span class="media-logo-text">Julie's Bakeshop™</span>
+						{/if}
 					</div>
 					<button type="button" class="media-card media-card--add" on:click={openFilePicker}>
 						<input
@@ -628,6 +632,13 @@
 		font-weight: 700;
 		font-size: 1rem;
 		color: #b91c1c;
+	}
+
+	.media-uploaded-img {
+		width: 100%;
+		max-height: 120px;
+		object-fit: contain;
+		border-radius: 6px;
 	}
 
 	.media-card--add {

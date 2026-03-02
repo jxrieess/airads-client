@@ -2,15 +2,15 @@
 	import { page } from '$app/stores';
 
 	const tabs = [
-		{ label: 'Dashboard', href: '/dashboard' },
-		{ label: 'Map', href: '/map' },
-		{ label: 'Advertise', href: '/advertise' }
+		{ label: 'Dashboard', href: '/client/dashboard' },
+		{ label: 'Map', href: '/client/map' },
+		{ label: 'Advertise', href: '/client/advertise' }
 	];
 </script>
 
 <nav class="tabs">
 	{#each tabs as tab}
-		<a href={tab.href} class="tab" class:active={$page.url.pathname === tab.href}>
+		<a href={tab.href} class="tab" class:active={tab.href === '/client/advertise' ? $page.url.pathname.startsWith('/client/advertise') : $page.url.pathname.startsWith(tab.href)}>
 			{tab.label}
 		</a>
 	{/each}

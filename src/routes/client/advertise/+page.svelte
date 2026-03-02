@@ -1,13 +1,13 @@
 <div class="advertise-page">
 	<div class="advertise-header-row">
-		<a href="/dashboard" class="back-link">&lt;</a>
+		<a href="/client/dashboard" class="back-link">&lt;</a>
 	</div>
 
 	<div class="advertise-options">
-		<a href="/advertise/airads/tips" class="advertise-pill">
+		<a href="/client/advertise/airads/tips" class="advertise-pill">
 			Tips of the Day
 		</a>
-		<a href="/advertise/airads" class="advertise-pill">
+		<a href="/client/advertise/airads" class="advertise-pill">
 			Advertise
 		</a>
 	</div>

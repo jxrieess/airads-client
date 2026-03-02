@@ -163,7 +163,7 @@
 
 <div class="tips-page">
 	<div class="tips-header">
-		<a href="/advertise" class="back-link">&lt;</a>
+		<a href="/client/advertise" class="back-link">&lt;</a>
 		<span class="crumb">Client - Tips of the Day</span>
 	</div>
 

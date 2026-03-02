@@ -7,7 +7,6 @@
 		.trim()
 		.replace(/^['"]|['"]$/g, '');
 
-	// Fallback: Philippines center
 	const DEFAULT_CENTER: [number, number] = [122.7312, 11.351];
 	const DEFAULT_ZOOM = 5;
 
@@ -30,11 +29,9 @@
 			}
 			mapboxgl.accessToken = token;
 
-			// Wait for container to have dimensions (fixes blank map when flex layout hasn't laid out yet)
 			await new Promise((r) => requestAnimationFrame(r));
 			await new Promise((r) => setTimeout(r, 50));
 
-			// Force container to have pixel dimensions so Mapbox can render tiles
 			const rect = mapContainer.getBoundingClientRect();
 			if (rect.width < 10 || rect.height < 10) {
 				mapContainer.style.height = '450px';
@@ -72,7 +69,6 @@
 
 						mapInstance.flyTo({ center: [lng, lat], zoom: 14, duration: 2000 });
 
-						// Remove previous marker if any
 						if (userMarker) userMarker.remove();
 
 						userMarker = new mapboxgl.Marker({ color: '#0ea5e9' })
@@ -120,13 +116,7 @@
 </div>
 
 <style>
-	.map-page {
-		display: flex;
-		flex-direction: column;
-		flex: 1;
-		min-height: 0;
-	}
-
+	.map-page { display: flex; flex-direction: column; flex: 1; min-height: 0; }
 	.map-card {
 		border: 1px solid #a8d8e8;
 		border-radius: 12px;
@@ -137,39 +127,11 @@
 		flex: 1;
 		min-height: 0;
 	}
-
-	.map-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin-bottom: 0.75rem;
-	}
-
-	.map-title {
-		margin: 0;
-		font-size: 1.05rem;
-		font-weight: 600;
-		color: #1f2937;
-	}
-
-	.map-subtitle {
-		margin: 0.15rem 0 0 0;
-		font-size: 0.85rem;
-		color: #6b7280;
-	}
-
-	.location-message {
-		margin: 0 0 0.75rem 0;
-		font-size: 0.85rem;
-		padding: 0.5rem 0.75rem;
-		border-radius: 8px;
-	}
-	.location-message--warn {
-		background: #fef3c7;
-		color: #92400e;
-		border: 1px solid #fcd34d;
-	}
-
+	.map-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+	.map-title { margin: 0; font-size: 1.05rem; font-weight: 600; color: #1f2937; }
+	.map-subtitle { margin: 0.15rem 0 0 0; font-size: 0.85rem; color: #6b7280; }
+	.location-message { margin: 0 0 0.75rem 0; font-size: 0.85rem; padding: 0.5rem 0.75rem; border-radius: 8px; }
+	.location-message--warn { background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
 	.map-container {
 		flex: 1;
 		min-height: 360px;
@@ -179,10 +141,5 @@
 		overflow: hidden;
 		position: relative;
 	}
-
-	/* Make mapbox canvas fill the container */
-	.map-container :global(.mapboxgl-canvas) {
-		width: 100% !important;
-		height: 100% !important;
-	}
+	.map-container :global(.mapboxgl-canvas) { width: 100% !important; height: 100% !important; }
 </style>

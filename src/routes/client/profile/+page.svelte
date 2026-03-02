@@ -38,7 +38,7 @@
 						class="avatar-input"
 						type="file"
 						accept="image/*"
-						on:change={handleAvatarChange}
+						onchange={handleAvatarChange}
 					/>
 				</label>
 			{/if}
@@ -66,7 +66,7 @@
 				<button
 					class="edit-profile-btn"
 					type="button"
-					on:click={() => (isEditing = !isEditing)}
+					onclick={() => (isEditing = !isEditing)}
 				>
 					{isEditing ? 'Cancel' : 'Edit Profile'}
 				</button>
@@ -119,7 +119,7 @@
 
 			{#if isEditing}
 				<div class="profile-actions">
-					<button class="save-btn" type="button" on:click={() => (isEditing = false)}>
+					<button class="save-btn" type="button" onclick={() => (isEditing = false)}>
 						Saves Changes
 					</button>
 				</div>
@@ -339,4 +339,3 @@
 		background: #184581;
 	}
 </style>
-
