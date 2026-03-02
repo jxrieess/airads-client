@@ -47,7 +47,7 @@
 
 <style>
 	.chart-card {
-		border: 1px solid #a8d8e8;
+		border: 1px solid #6CE5E8;
 		border-radius: 12px;
 		padding: 1rem;
 		background: #fff;

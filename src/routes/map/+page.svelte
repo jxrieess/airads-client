@@ -2,7 +2,10 @@
 	import { onMount } from 'svelte';
 	import 'mapbox-gl/dist/mapbox-gl.css';
 
-	const mapboxToken = import.meta.env.VITE_MAPBOX_TOKEN;
+	const mapboxToken = (import.meta.env.VITE_MAPBOX_TOKEN ?? '')
+		.toString()
+		.trim()
+		.replace(/^['"]|['"]$/g, '');
 
 	// Fallback: Philippines center
 	const DEFAULT_CENTER: [number, number] = [122.7312, 11.351];
@@ -10,6 +13,7 @@
 
 	let mapContainer: HTMLDivElement;
 	let locationError = '';
+	let mapLoadError = '';
 
 	onMount(() => {
 		let mapInstance: any;
@@ -19,7 +23,23 @@
 			const module = await import('mapbox-gl');
 			const mapboxgl = module.default;
 
-			mapboxgl.accessToken = mapboxToken;
+			const token = mapboxToken || '';
+			if (!token) {
+				locationError = 'Map token not configured. Add VITE_MAPBOX_TOKEN to .env';
+				return;
+			}
+			mapboxgl.accessToken = token;
+
+			// Wait for container to have dimensions (fixes blank map when flex layout hasn't laid out yet)
+			await new Promise((r) => requestAnimationFrame(r));
+			await new Promise((r) => setTimeout(r, 50));
+
+			// Force container to have pixel dimensions so Mapbox can render tiles
+			const rect = mapContainer.getBoundingClientRect();
+			if (rect.width < 10 || rect.height < 10) {
+				mapContainer.style.height = '450px';
+				mapContainer.style.width = '100%';
+			}
 
 			mapInstance = new mapboxgl.Map({
 				container: mapContainer,
@@ -30,8 +50,15 @@
 
 			mapInstance.addControl(new mapboxgl.NavigationControl(), 'top-right');
 
-			// Center map on user's location when ready
+			mapInstance.on('error', (e: any) => {
+				mapLoadError = 'Map could not load. Check that your Mapbox token is valid and allows this URL (e.g. http://localhost:5173).';
+				console.error('Mapbox error:', e);
+			});
+
 			mapInstance.on('load', () => {
+				mapLoadError = '';
+				mapInstance.resize();
+				setTimeout(() => mapInstance.resize(), 100);
 				if (!navigator.geolocation) {
 					locationError = 'Geolocation is not supported by your browser.';
 					return;
@@ -83,6 +110,9 @@
 
 		{#if locationError}
 			<p class="location-message location-message--warn" role="alert">{locationError}</p>
+		{/if}
+		{#if mapLoadError}
+			<p class="location-message location-message--warn" role="alert">{mapLoadError}</p>
 		{/if}
 
 		<div bind:this={mapContainer} class="map-container" />
@@ -143,8 +173,11 @@
 	.map-container {
 		flex: 1;
 		min-height: 360px;
+		height: 450px;
+		width: 100%;
 		border-radius: 10px;
 		overflow: hidden;
+		position: relative;
 	}
 
 	/* Make mapbox canvas fill the container */

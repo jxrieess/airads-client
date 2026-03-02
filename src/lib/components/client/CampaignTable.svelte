@@ -69,7 +69,7 @@
 
 <style>
 	.table-card {
-		border: 1px solid #a8d8e8;
+		border: 1px solid #6CE5E8;
 		background: #fff;
 		border-radius: 12px;
 		overflow: hidden;
@@ -85,11 +85,11 @@
 		background: #fff;
 		color: #374151;
 		font-weight: 600;
-		border-bottom: 1px solid #e5e7eb;
+		border-bottom: 1px solid #6CE5E8;
 	}
 	.data-table td {
 		padding: 0.75rem 1rem;
-		border-bottom: 1px solid #f3f4f6;
+		border-bottom: 1px solid #e5e7eb;
 	}
 	.data-table tbody tr.alt {
 		background: #f8fafc;

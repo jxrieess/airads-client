@@ -13,24 +13,24 @@
 
 <style>
 	.kpi-card {
-		border: 1px solid #a8d8e8;
+		border: 1px solid #6CE5E8;
 		border-radius: 12px;
 		padding: 1.25rem;
 		display: flex;
 		flex-direction: column;
 		align-items: stretch;
 		background: #fff;
-		height: 120px;
+		height: 100px;
 	}
 	.kpi-label {
-		font-size: 0.9rem;
+		font-size: 1rem;
 		font-weight: 600;
 		color: #1f2937;
 		text-align: left;
 		flex-shrink: 0;
 	}
 	.kpi-value {
-		font-size: 1.75rem;
+		font-size: 3rem;
 		font-weight: 700;
 		color: #1f2937;
 		text-align: center;

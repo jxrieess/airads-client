@@ -99,7 +99,7 @@
 	}
 	.filter-select,
 	.search-wrap {
-		border: 1px solid #a8d8e8;
+		border: 1px solid #6CE5E8;
 		border-radius: 8px;
 		padding: 0.5rem 0.75rem;
 		font-size: 0.9rem;

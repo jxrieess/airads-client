@@ -10,7 +10,6 @@
 
 <header class="header">
 	<div class="header-left">
-		<h1 class="title">Client DASHBOARD</h1>
 		<p class="welcome">Welcome to AirAds, <strong class="client-name">{clientName}</strong></p>
 	</div>
 	<div class="header-right">
@@ -37,16 +36,10 @@
 		align-items: flex-start;
 		margin-bottom: 1.5rem;
 	}
-	.header-left .title {
-		font-size: 1.25rem;
-		font-weight: 600;
-		color: #374151;
-		margin: 0 0 0.25rem 0;
-	}
 	.welcome {
 		margin: 0;
-		font-size: 0.95rem;
-		color: #4b5563;
+		font-size: 1.5rem;
+		color: #374151;
 	}
 	.client-name {
 		color: #1e40af;

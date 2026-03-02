@@ -452,7 +452,7 @@
 	}
 
 	.back-link:hover {
-		border-color: #d1d5db;
+		border-color: #6CE5E8;
 		background: #f3f4f6;
 	}
 
@@ -462,7 +462,7 @@
 	}
 
 	.panel {
-		border: 2px solid #7ee0e5;
+		border: 2px solid #6CE5E8;
 		border-radius: 12px;
 		background: #fff;
 		padding: 1rem 1.25rem;
@@ -529,7 +529,7 @@
 	.textarea {
 		width: 100%;
 		padding: 0.5rem 0.75rem;
-		border: 1px solid #e5e7eb;
+		border: 1px solid #6CE5E8;
 		border-radius: 6px;
 		font-size: 0.9rem;
 		color: #1f2937;
@@ -580,7 +580,7 @@
 	}
 
 	.receipt-preview {
-		border: 1px solid #e5e7eb;
+		border: 1px solid #6CE5E8;
 		border-radius: 8px;
 		padding: 0.75rem 0.75rem 1rem;
 		background: #f9fafb;
@@ -596,7 +596,7 @@
 	.receipt-ad {
 		margin-top: 0.75rem;
 		padding-top: 0.5rem;
-		border-top: 1px dashed #d1d5db;
+		border-top: 1px dashed #6CE5E8;
 		font-weight: 600;
 		text-align: center;
 	}
@@ -612,7 +612,7 @@
 		align-items: center;
 		justify-content: space-between;
 		padding: 0.5rem 0.75rem;
-		border: 1px solid #e5e7eb;
+		border: 1px solid #6CE5E8;
 		border-radius: 6px;
 		background: #fff;
 		font-size: 0.9rem;
@@ -647,7 +647,7 @@
 		right: 0;
 		margin-top: 0.25rem;
 		background: #fff;
-		border: 1px solid #e5e7eb;
+		border: 1px solid #6CE5E8;
 		border-radius: 6px;
 		max-height: 200px;
 		overflow-y: auto;
@@ -681,7 +681,7 @@
 		padding: 0.35rem 0.75rem;
 		font-size: 0.85rem;
 		color: #111827;
-		border-bottom: 1px solid #e5e7eb;
+		border-bottom: 1px solid #6CE5E8;
 	}
 
 	.route-option-row:last-child {
@@ -746,7 +746,7 @@
 
 	.duration-card {
 		flex: 1 1 0;
-		border: 1px solid #7ee0e5;
+		border: 1px solid #6CE5E8;
 		border-radius: 10px;
 		padding: 0.45rem 0.75rem;
 		display: flex;
@@ -871,7 +871,7 @@
 
 	.summary-block {
 		margin-top: 0.75rem;
-		border-top: 1px solid #e5e7eb;
+		border-top: 1px solid #6CE5E8;
 		padding-top: 0.75rem;
 	}
 

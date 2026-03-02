@@ -21,7 +21,7 @@
 		display: flex;
 		gap: 0.5rem;
 		margin-bottom: 1.5rem;
-		border-bottom: 1px solid #e5e7eb;
+		border-bottom: 1px solid #2F5F98;
 	}
 	.tab {
 		padding: 0.6rem 0.25rem;
@@ -33,6 +33,6 @@
 	.tab.active {
 		color: #374151;
 		font-weight: 700;
-		border-bottom: 3px solid #a8d8e8;
+		border-bottom: 3px solid #2F5F98;
 	}
 </style>

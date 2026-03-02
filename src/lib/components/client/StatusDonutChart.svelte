@@ -10,9 +10,9 @@
 	}
 
 	const defaultData: Segment[] = [
-		{ label: 'Completed', value: 12.5, color: '#1e40af' },
-		{ label: 'Ongoing', value: 25, color: '#60a5fa' },
-		{ label: 'For Approval', value: 62.5, color: '#93c5fd' }
+		{ label: 'Completed', value: 12.5, color: '#2F5F98' },
+		{ label: 'Ongoing', value: 25, color: '#3B92BE' },
+		{ label: 'For Approval', value: 62.5, color: '#5AC1DA' }
 	];
 
 	let { data = defaultData }: Props = $props();
@@ -51,7 +51,7 @@
 
 <style>
 	.chart-card {
-		border: 1px solid #a8d8e8;
+		border: 1px solid #6CE5E8;
 		border-radius: 12px;
 		padding: 1rem;
 		background: #fff;
@@ -65,7 +65,7 @@
 		color: #1f2937;
 		margin: 0.75rem 0 0 0;
 		margin-top: auto;
-		font-size: 0.95rem;
+		font-size: 1rem;
 		flex-shrink: 0;
 	}
 	.chart-donut {
